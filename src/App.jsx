@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/main.css'; // اضافه‌شده برای بارگذاری استایل
 import AuthForm from './components/AuthForm';
 import ChatWindow from './components/ChatWindow';
 import Settings from './components/Settings';
