@@ -1,0 +1,2 @@
+<!-- قرار دادن favicon در فایل public/index.html -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
