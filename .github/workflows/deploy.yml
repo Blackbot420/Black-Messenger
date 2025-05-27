@@ -3,14 +3,17 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # اگر شاخه‌ی اصلی تو اسمش master هست، اینو تغییر بده به master
+      - main  # اگر شاخه‌ی اصلی شما 'master' است، اینجا را به 'master' تغییر دهید
+
+permissions:
+  contents: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -18,10 +21,10 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Build App
+      - name: Build the app
         run: npm run build
 
       - name: Deploy to GitHub Pages
